@@ -34,7 +34,7 @@
                           <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a></li>
                       <% } else { %>
                           <li><a href="/posts/new">Add a new post</a></li>
-                          <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                          <li><a href="#">Hi, <%= currentUser.username %></a></li>
                           <li><a href="/logout">Logout</a></li>
                       <% } %>
                   </ul>
@@ -56,7 +56,7 @@
         <div class="container">
           <header class="jumbotron">
               <div class="container">
-                  <h1><a href="/posts">Header</a></h1>
+                  <h1><a id="header" href="/posts">Header</a></h1>
                   <p>Subtitle</p>
               </div>
           </header>

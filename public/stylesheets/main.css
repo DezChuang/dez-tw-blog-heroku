@@ -27,8 +27,6 @@ body {
     background: #FFF;
     text-align: center;
     position: relative;
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
 .ui.items > .item {
@@ -38,3 +36,24 @@ body {
 .ui.buttons .button, .ui.buttons .or, .ui.button {
     font-size: 14px;
 }
+
+a {
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+.ui.segments .segment, .ui.segment {
+    font-size: 18px;
+}
+
+#postTitle {
+    margin-left: 0;
+}
+
