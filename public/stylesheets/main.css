@@ -1,3 +1,7 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .thumbnail img {
     width: 100%;
 }
@@ -12,4 +16,25 @@
 
 #delete-form {
     display: inline;
+}
+
+.navbar-default {
+    background-color: #FFF5EE; /*SEASHELL*/
+}
+
+.jumbotron{
+    /* background: #FFF5EE; */ /*SEASHELL*/
+    background: #FFF;
+    text-align: center;
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.ui.items > .item {
+    font-size: 18px;
+}
+
+.ui.buttons .button, .ui.buttons .or, .ui.button {
+    font-size: 14px;
 }

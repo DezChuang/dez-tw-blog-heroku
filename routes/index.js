@@ -10,6 +10,14 @@ router.get("/", function(req,res){
     res.render("welcome");
 });
 
+router.get("/archive", function(req,res){
+    res.render("archive", {page: 'archive'});
+});
+
+router.get("/about", function(req,res){
+    res.render("about", {page: 'about'});
+});
+
 //========================
 // REGISTER ROUTE
 //========================

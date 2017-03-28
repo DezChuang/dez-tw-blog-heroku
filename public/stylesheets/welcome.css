@@ -10,7 +10,7 @@ body {
 }
 
 #landing-header h1 {
-  color: #fff;
+  color: #F5F5DC;
 }
 
 .slideshow {
@@ -40,23 +40,28 @@ body {
 }
 
 .slideshow li:nth-child(1) {
-  background-image: url(http://i.imgur.com/K3mPv14.jpg)
+  background-image: url(../img/01.jpg)
 }
 .slideshow li:nth-child(2) {
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
-  animation-delay: 10s;
+  background-image: url(../img/02.jpg);
+  animation-delay: 7s;
 }
 .slideshow li:nth-child(3) {
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
-  animation-delay: 20s;
+  background-image: url(../img/03.jpg);
+  animation-delay: 14s;
 }
 .slideshow li:nth-child(4) {
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
-  animation-delay: 30s;
+  background-image: url(../img/04.jpg);
+  animation-delay: 21s;
 }
 .slideshow li:nth-child(5) {
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
-  animation-delay: 40s;
+  background-image: url(../img/05.jpg);
+  animation-delay: 28s;
+}
+
+#welcome-btn {
+  background-color: #F5F5DC;
+  color: #2F4F4F;
 }
 
 @keyframes imageAnimation {
