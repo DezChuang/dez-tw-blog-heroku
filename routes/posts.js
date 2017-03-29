@@ -16,7 +16,7 @@ router.get("/", function(req,res){
 });
 
 //CREATE - Add new posts to DB
-router.post("/", middleware.isLoggedIn, function(req,res){
+router.post("/", middleware.isAdmin, function(req,res){
     //get data from form and add to post array in app.js
     var title = req.body.title;
     var image = req.body.image;
@@ -37,7 +37,7 @@ router.post("/", middleware.isLoggedIn, function(req,res){
 });
 
 //NEW - Show form to create new posts
-router.get("/new", middleware.isLoggedIn, function(req,res){
+router.get("/new", middleware.isAdmin, function(req,res){
     res.render("posts/new");
 });
 

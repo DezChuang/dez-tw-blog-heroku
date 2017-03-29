@@ -49,6 +49,10 @@ a {
     transition-delay: initial;
 }
 
+.jumbotron p {
+    font-size: 32px; /*Need RWD refactor*/
+}
+
 .ui.segments .segment, .ui.segment {
     font-size: 18px;
 }

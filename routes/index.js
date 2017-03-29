@@ -18,6 +18,10 @@ router.get("/about", function(req,res){
     res.render("about", {page: 'about'});
 });
 
+router.get("/profile", function(req,res){
+    res.render("profile", {page: 'profile'});
+});
+
 //========================
 // REGISTER ROUTE
 //========================
@@ -32,7 +36,7 @@ router.post("/register", function(req, res){
             return res.render("register", {"error": err.message});
         } else {
             passport.authenticate("local")(req, res, function(){
-                req.flash("success", "Welcome to YelpCamp, " + user.username);
+                req.flash("success", "Welcome to my blog, " + user.username + ", you can comment on every post now!");
                 res.redirect("/posts");
             });
         }
@@ -49,7 +53,9 @@ router.get("/login", function(req, res){
 //handling user log in
 router.post("/login", passport.authenticate("local",{
     successRedirect: "/posts",
-    failureRedirect: "/login"
+    failureRedirect: "/login",
+    successFlash: "Welcome, ", //add username in header.ejs
+    failureFlash: true
 }), function(req, res){});
 
 //========================

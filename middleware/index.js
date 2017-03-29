@@ -59,4 +59,19 @@ middlewareObj.isLoggedIn = function(req, res, next){
     res.redirect("/login");
 };
 
+//middleware to check admin role allowed to post
+middlewareObj.isAdmin = function(req, res, next){
+    if(req.isAuthenticated()){
+        if(req.user.username === 'dez'){
+            next();
+        } else {
+            req.flash("error", "You only can comment on posts, thanks!");
+            res.redirect("/posts");
+        }
+    } else {
+        req.flash("error", "You need to be logged in to do that.");
+        res.redirect("back");
+    }
+};
+
 module.exports = middlewareObj;
