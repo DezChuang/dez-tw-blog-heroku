@@ -1,8 +1,15 @@
 <% include ../partials/header %>
 
+    <header class="jumbotron">
+        <div class="container">
+            <h1><a id="header" href="/posts">Header</a></h1>
+            <p>Subtitle</p>
+        </div>
+    </header>
+
     <div class="row" style="display: flex; flex-wrap: wrap;">
 
-        <div class="ui top attached segment">
+        <div class="ui top piled segment">
             <div class="ui divided items">
                 <% posts.forEach(function(post){%>
                     <div class="item">
@@ -21,8 +28,8 @@
                                 <p><%- post.description.substring(0, 200)%>...</p>
                             </div>
                             <div class="extra">
-                                <a class="ui right labeled icon button" href="/posts/<%= post._id%>">
-                                <i class="right arrow icon"></i>
+                                <a class="ui medium teal basic right labeled icon button" href="/posts/<%= post._id%>">
+                                <i class="long arrow right icon"></i>
                                     Read More
                                 </a>
                             </div>

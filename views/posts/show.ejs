@@ -1,5 +1,13 @@
 <% include ../partials/header %>
 
+    <header class="jumbotron">
+        <div class="container">
+            <h1><a id="header" href="/posts">Header</a></h1>
+            <p>Subtitle</p>
+        </div>
+    </header>
+
+
     <div id="postTitle" class="row text-center" style="display: flex; flex-wrap: wrap;">
         <h1><a><%= post.title%></a></h1>
     </div>
@@ -9,40 +17,50 @@
                 <img class="img-responsive" src="<%= post.image%>">
                 <div class="caption-full">
                     <p><%= post.description%></p>
+                    <div class="ui clearing divider"></div>
                     <p>
                         <em>Submitted by <%= post.author.username%></em>
                     </p>
                     <% if(currentUser && post.author.id.equals(currentUser._id)) {%>
-                        <a class="btn btn-warning" href="/posts/<%= post._id%>/edit">Edit</a>
+                        <a class="ui orange medium button" href="/posts/<%= post._id%>/edit">Edit</a>
                         <form id="delete-form" action="/posts/<%= post._id%>?_method=DELETE" method="POST">
-                            <input type="submit" class="btn btn-danger" value="Delete">
+                            <input type="submit" class="ui red medium button" value="Delete">
                         </form>
                     <% }%>
                 </div>
             </div>
-            <div class="well">
-                <div class="text-right">
-                    <a class="btn btn-success" href="/posts/<%= post._id%>/comments/new">Add new comment</a>
-                </div>
-                <hr>
+            <div class="text-right">
+                <a class="ui primary submit labeled icon button" href="/posts/<%= post._id%>/comments/new">
+                    <i class="icon edit"></i>Add new comment
+                </a>
+            </div>
+            <h1 class="ui black header">
+              <i class="comments icon"></i>
+              <div class="content">
+                Comment
+              </div>
+            </h1>
+            <div class="ui clearing divider"></div>
+            <div class="ui comments">
                 <% post.comments.forEach(function(comment){ %>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <strong><%= comment.author.username%></strong>
-                            <span class="pull-right">10 days ago</span>
-                            <p>
-                                <%= comment.text%>
-                            </p>
+                    <div class="comment">
+                        <div class="content">
+                            <strong class="author"><%= comment.author.username%></strong>
+                            <div class="metadata">
+                                <div class="date">2 days ago</div>
+                            </div>
+                            <div class="text">
+                                <pre><%= comment.text%></pre>
+                            </div>
                             <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
-                                <a class="btn btn-xs btn-warning" href="/posts/<%= post._id%>/comments/<%= comment._id%>/edit">Edit</a>
+                                <a class="ui orange small button" href="/posts/<%= post._id%>/comments/<%= comment._id%>/edit">Edit</a>
                                 <form id="delete-form" action="/posts/<%= post._id%>/comments/<%= comment._id%>?_method=DELETE" method="POST">
-                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                    <input type="submit" class="ui red small button" value="Delete">
                                 </form>
                             <% }%>
                         </div>
                     </div>
                 <% }) %>
-            </div>
         </div>
 
 

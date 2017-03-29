@@ -2,17 +2,17 @@
 
 <div class="row">
     <h1 style="text-align: center">Edit Your Comment</h1>
-    <div style="width: 30%; margin: 25px auto;">
+    <div style="width: 75%; margin: 25px auto;">
         <!-- Apply method-override to do PUT update-->
         <form action="/posts/<%= post_id%>/comments/<%= comment._id%>?_method=PUT" method="POST">
             <div class="form-group">
-                <input class="form-control" type="text" name="comment[text]" value="<%= comment.text%>">
+                <textarea class="form-control" type="text" name="comment[text]"><%= comment.text%></textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                <button class="fluid positive ui huge button">Submit</button>
             </div>
         </form>
-        <a href="/posts">Go back!</a>
+        <a href="/posts/<%= post_id%>">Go back!</a>
     </div>
 </div>
 

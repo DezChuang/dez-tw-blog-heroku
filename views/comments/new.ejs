@@ -1,11 +1,11 @@
 <% include ../partials/header %>
 
 <div class="row">
-    <h1 style="text-align: center">Add new comment to <%= post.name%></h1>
-    <div style="width: 30%; margin: 25px auto;">
+    <h1 style="text-align: center">Add new comment to <%= post.title%></h1>
+    <div style="width: 75%; margin: 25px auto;">
         <form action="/posts/<%= post._id%>/comments" method="POST">
-            <div class="form-group"><textarea class="form-control" type="text" name="comment[text]" placeholder="text"></textarea></div>
-            <div class="form-group"><button class="btn btn-lg btn-primary btn-block">Submit</button></div>
+            <div class="form-group"><textarea class="form-control" type="text" name="comment[text]" placeholder="Write your comment here..." ></textarea></div>
+            <div class="form-group"><button class="fluid positive ui huge button">Submit</button></div>
         </form>
         <a href="/posts">Go back!</a>
     </div>

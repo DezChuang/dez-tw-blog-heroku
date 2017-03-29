@@ -61,3 +61,19 @@ a {
     margin-left: 0;
 }
 
+#textarea.form-control {
+    height: 20vh;
+}
+
+textarea.form-control {
+    height: 20vh;
+}
+
+pre {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    border: 0;
+    background-color: #fff;
+}
+

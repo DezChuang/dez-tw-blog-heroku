@@ -2,12 +2,20 @@
 
     <div class="row">
         <h1 style="text-align: center">Create a New Post</h1>
-        <div style="width: 30%; margin: 25px auto;">
+        <div style="width: 75%; margin: 25px auto;">
             <form action="/posts" method="POST">
-                <div class="form-group"><input class="form-control" type="text" name="title" placeholder="title"></div>
-                <div class="form-group"><input class="form-control" type="text" name="image" placeholder="image url"></div>
-                <div class="form-group"><textarea class="form-control" name="description" placeholder="description"></textarea></div>
-                <div class="form-group"><button class="btn btn-lg btn-primary btn-block">Submit</button></div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="title" placeholder="title">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <textarea id="textarea" class="form-control" name="description" placeholder="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
             </form>
             <a href="/posts">Go back!</a>
         </div>

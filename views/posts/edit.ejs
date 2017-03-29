@@ -2,14 +2,25 @@
 
 <div class="row">
     <h1 style="text-align: center">Edit <%= post.title%></h1>
-    <div style="width: 30%; margin: 25px auto;">
+    <div style="width: 75%; margin: 25px auto;">
         <form action="/posts/<%= post._id%>?_method=PUT" method="POST">
-            <div class="form-group"><input class="form-control" type="text" name="post[title]" value="<%= post.title%>"></div>
-            <div class="form-group"><input class="form-control" type="text" name="post[image]" value="<%= post.image%>"></div>
-            <div class="form-group"><input class="form-control" type="text" name="post[description]" value="<%= post.description%>"></div>
+            <div class="form-group">
+                <div class="metadata">Title</div>
+                <input class="form-control" type="text" name="post[title]" value="<%= post.title%>">
+            </div>
+            <div class="form-group">
+                <div class="metadata">Image</div>
+                <input class="form-control" type="text" name="post[image]" value="<%= post.image%>">
+            </div>
+            <div class="form-group">
+                <div class="metadata">Text</div>
+                <textarea class="form-control" type="text" name="post[description]">
+                    <%= post.description%>
+                </textarea>
+            </div>
             <div class="form-group"><button class="btn btn-lg btn-primary btn-block">Submit</button></div>
         </form>
-        <a href="/posts">Go back!</a>
+        <a href="/posts/<%= post._id%>">Go back!</a>
     </div>
 </div>
 
