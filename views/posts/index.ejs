@@ -11,7 +11,7 @@
 
         <div class="ui top piled segment">
             <div class="ui divided items">
-                <% posts.forEach(function(post){%>
+                <% posts.reverse().forEach(function(post){%>
                     <div class="item">
                         <div class="image">
                             <a href="/posts/<%= post._id%>" class="ui medium aligned tiny image">
@@ -21,7 +21,7 @@
                         <div class="content">
                             <a class="header" href="/posts/<%= post._id%>"><%= post.title%></a>
                             <div class="meta">
-                                <span><%= post.created.toDateString()%></span>
+                                <span><%= moment(post.created).format('ll') %></span>
                             </div>
                             <div class="description">
                                 <!-- allow HTML to be rendered-->

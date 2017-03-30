@@ -20,7 +20,7 @@
                     <p><%- post.description.replace(/(?:\r\n|\r|\n)/g, '</br>')%></p>
                     <div class="ui clearing divider"></div>
                     <p>
-                        Posted by <%= post.author.username.split("")[0].toUpperCase() + post.author.username.slice(1) %> | <%= moment(post.created).format('MMM Do YYYY') %> | <%= moment(post.created).format('hh:mm:ss') %>
+                        Posted by <%= post.author.username.split("")[0].toUpperCase() + post.author.username.slice(1) %> | <%= moment(post.created).format('MMM Do YYYY') %> | <%= moment(post.created).format('hh:mm:ss a') %>
                     </p>
                     <% if(currentUser && post.author.id.equals(currentUser._id)) {%>
                         <a class="ui orange medium button" href="/posts/<%= post._id%>/edit">Edit</a>

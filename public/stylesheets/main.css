@@ -77,3 +77,6 @@ pre {
     background-color: #fff;
 }
 
+i.icon, i.icons {
+    font-size: 1.5em;
+}
