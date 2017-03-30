@@ -16,10 +16,11 @@
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= post.image%>">
                 <div class="caption-full">
-                    <p><%= post.description%></p>
+                    <!-- Use '-' to allow HTML tag to be rendered and replace newline with <br>-->
+                    <p><%- post.description.replace(/(?:\r\n|\r|\n)/g, '</br>')%></p>
                     <div class="ui clearing divider"></div>
                     <p>
-                        <em>Submitted by <%= post.author.username%></em>
+                        Posted by <%= post.author.username.split("")[0].toUpperCase() + post.author.username.slice(1) %> | <%= moment(post.created).format('MMM Do YYYY') %> | <%= moment(post.created).format('hh:mm:ss') %>
                     </p>
                     <% if(currentUser && post.author.id.equals(currentUser._id)) {%>
                         <a class="ui orange medium button" href="/posts/<%= post._id%>/edit">Edit</a>
@@ -47,7 +48,7 @@
                         <div class="content">
                             <strong class="author"><%= comment.author.username%></strong>
                             <div class="metadata">
-                                <div class="date">2 days ago</div>
+                                <span class="pull-right"><%= moment(comment.created).fromNow() %></span>
                             </div>
                             <div class="text">
                                 <pre><%= comment.text%></pre>
