@@ -49,6 +49,10 @@ a {
     transition-delay: initial;
 }
 
+a#footer {
+    color: #fff;
+}
+
 .jumbotron p {
     font-size: 32px; /*Need RWD refactor*/
 }
@@ -69,14 +73,28 @@ textarea.form-control {
     height: 20vh;
 }
 
-pre {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 16px;
-    padding: 5px;
-    border: 0;
-    background-color: #fff;
+i#contact-icon.icon {
+    font-size: 1.5em;
 }
 
-i.icon, i.icons {
-    font-size: 1.5em;
+i#footer-icon.icon {
+    font-size: 2em;
+}
+
+h1#about.ui.header {
+    font-size: 2.5rem;
+}
+
+h3#footer.ui.inverted.center.header {
+    margin: 0 auto;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: normal;
+}
+
+.ui.inverted.segment {
+    background: #696969;
+}
+
+div#header.container {
+    margin-bottom: 100px;
 }

@@ -51,7 +51,7 @@
                                 <span class="pull-right"><%= moment(comment.created).fromNow() %></span>
                             </div>
                             <div class="text">
-                                <pre><%= comment.text%></pre>
+                                <p><%- comment.text.replace(/(?:\r\n|\r|\n)/g, '</br>')%></p>
                             </div>
                             <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
                                 <a class="ui orange small button" href="/posts/<%= post._id%>/comments/<%= comment._id%>/edit">Edit</a>
@@ -62,6 +62,7 @@
                         </div>
                     </div>
                 <% }) %>
+            </div>
         </div>
 
 
