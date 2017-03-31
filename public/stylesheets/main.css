@@ -29,6 +29,10 @@ body {
     position: relative;
 }
 
+header.jumbotron {
+    margin: 0 auto;
+}
+
 .ui.items > .item {
     font-size: 18px;
 }

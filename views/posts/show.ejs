@@ -2,8 +2,8 @@
 
     <header class="jumbotron">
         <div class="container">
-            <h1><a id="header" href="/posts">Header</a></h1>
-            <p>Subtitle</p>
+            <h1><a id="header" href="/posts">Dez.tw</a></h1>
+            <p>Learning, sharing and strengthening</p>
         </div>
     </header>
 
@@ -18,7 +18,7 @@
                 <div class="caption-full">
                     <!-- Use '-' to allow HTML tag to be rendered and replace newline with <br>-->
                     <p><%- post.description.replace(/(?:\r\n|\r|\n)/g, '</br>')%></p>
-                    <div class="ui clearing divider"></div>
+                    <br><br><div class="ui hidden divider"></div>
                     <p>
                         Posted by <%= post.author.username.split("")[0].toUpperCase() + post.author.username.slice(1) %> | <%= moment(post.created).format('MMM Do YYYY') %> | <%= moment(post.created).format('hh:mm:ss a') %>
                     </p>
