@@ -11,7 +11,7 @@
         <link rel="icon" href="/img/favicon.png">
     </head>
     <body>
-        <nav class="navbar navbar-default">
+        <nav id="navfix" class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,6 +28,7 @@
                     <li class="<%= typeof page !== 'undefined' && page === 'posts' ? 'active' : '' %>"><a href="/posts">Blog</a></li>
                     <!-- <li class="<%= typeof page !== 'undefined' && page === 'archive' ? 'active' : '' %>"><a href="/archive">Archive</a></li> -->
                     <li class="<%= typeof page !== 'undefined' && page === 'about' ? 'active' : '' %>"><a href="/about">About</a></li>
+                    <li id="gotop"><a href="#">Gotop</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                       <% if(!currentUser){ %>

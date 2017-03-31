@@ -19,6 +19,30 @@
                 crossorigin="anonymous">
         </script>
 
+        <script type="text/javascript">
+          //nav bar fixed
+          $(document).ready(function() {
+            $(window).scroll(function () {
+              if ($(this).scrollTop() > 60) {
+                $('#navfix').addClass("fixed-nav");
+              } else {
+                $('#navfix').removeClass("fixed-nav");
+              }
+            });
+          });
+        </script>
+
+        <script type="text/javascript">
+          //go top button
+          $(function(){
+            $("#gotop").click(function(){
+                jQuery("html,body").animate({
+                scrollTop:0
+            },1000);
+          });
+        });
+        </script>
+
         <!-- Bootstrap JS CDN -->
         <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
