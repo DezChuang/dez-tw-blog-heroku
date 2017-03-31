@@ -30,45 +30,12 @@
                     <% }%>
                 </div>
             </div>
-<!--             <div class="text-right">
-                <a class="ui primary submit labeled icon button" href="/posts/<%= post._id%>/comments/new">
-                    <i class="icon edit"></i>Add new comment
-                </a>
-            </div>
-            <h1 class="ui black header">
-              <i class="comments icon"></i>
-              <div class="content">
-                Comment
-              </div>
-            </h1>
-            <div class="ui clearing divider"></div>
-            <div class="ui comments">
-                <% post.comments.forEach(function(comment){ %>
-                    <div class="comment">
-                        <div class="content">
-                            <strong class="author"><%= comment.author.username%></strong>
-                            <div class="metadata">
-                                <span class="pull-right"><%= moment(comment.created).fromNow() %></span>
-                            </div>
-                            <div class="text">
-                                <p><%- comment.text.replace(/(?:\r\n|\r|\n)/g, '</br>')%></p>
-                            </div>
-                            <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
-                                <a class="ui orange small button" href="/posts/<%= post._id%>/comments/<%= comment._id%>/edit">Edit</a>
-                                <form id="delete-form" action="/posts/<%= post._id%>/comments/<%= comment._id%>?_method=DELETE" method="POST">
-                                    <input type="submit" class="ui red small button" value="Delete">
-                                </form>
-                            <% }%>
-                        </div>
-                    </div>
-                <% }) %>
-            </div> -->
             <br><br>
             <!-- Use DISQUS as global comment system temporary-->
             <h1 class="ui black header">
               <i class="comments icon"></i>
               <div class="content">
-                Comment
+                Comments
               </div>
             </h1>
             <div class="ui clearing divider"></div>
@@ -95,6 +62,41 @@
                 Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
             </noscript>
             <!-- DISQUS setting end-->
+
+            <br><br>
+            <h1 class="ui black header">
+              <i class="comments icon"></i>
+              <div class="content">
+                My Comment System
+              </div>
+            </h1>
+            <div class="text-right">
+                <a class="ui primary submit labeled icon button" href="/posts/<%= post._id%>/comments/new">
+                    <i class="icon edit"></i>Add new comment
+                </a>
+            </div>
+            <div class="ui clearing divider"></div>
+            <div class="ui comments">
+                <% post.comments.forEach(function(comment){ %>
+                    <div class="comment">
+                        <div class="content">
+                            <strong class="author"><%= comment.author.username%></strong>
+                            <div class="metadata">
+                                <span class="pull-right"><%= moment(comment.created).fromNow() %></span>
+                            </div>
+                            <div class="text">
+                                <p><%- comment.text.replace(/(?:\r\n|\r|\n)/g, '</br>')%></p>
+                            </div>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
+                                <a class="ui orange small button" href="/posts/<%= post._id%>/comments/<%= comment._id%>/edit">Edit</a>
+                                <form id="delete-form" action="/posts/<%= post._id%>/comments/<%= comment._id%>?_method=DELETE" method="POST">
+                                    <input type="submit" class="ui red small button" value="Delete">
+                                </form>
+                            <% }%>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
         </div>
 
 
