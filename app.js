@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 //SeedDB();
 
-app.locals.moment = require('moment');
+app.locals.moment = require('moment-timezone');
 // passport configuration
 app.use(require("express-session")({
     secret: "Yesterday I saw a lion kiss a deer",
