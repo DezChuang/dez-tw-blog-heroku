@@ -65,7 +65,7 @@ router.get("/:id/edit", middleware.checkPostOwnership, function(req, res){
 //UPDATE
 router.put("/:id", middleware.checkPostOwnership, function(req, res){
     //Add express-sanitizer to prevent middleware script in post
-    req.body.post.description = req.sanitize(req.body.post.description);
+    //req.body.post.description = req.sanitize(req.body.post.description);
     Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost) {
         if(err){
             console.log(err);

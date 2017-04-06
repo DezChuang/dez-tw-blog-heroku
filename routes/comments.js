@@ -24,6 +24,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
             res.redirect("back");
         } else {
             //create new comment
+            req.body.comment.text = req.sanitize(req.body.comment.text);
             Comment.create(req.body.comment, function(err, comment){
                 if(err) {
                     req.flash("error", "Something went wrong");
