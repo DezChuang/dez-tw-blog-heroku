@@ -1,2 +1,2 @@
-# dez-tw-blog-heroku
-* [Demo](http://deztwblog.herokuapp.com/)
+# Blog works using NodeJS, AWS EC2
+* [Demo](http://52.197.26.179/)
